@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC SCHOOL - Student Registration Form</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            page-break-inside: avoid;
+        }
+        h1, h2 {
+            text-align: center;
+            margin: 10px 0;
+        }
+        h1 {
+            color: #FF6347; /* Tomato */
+        }
+        h2 {
+            color: #20B2AA; /* Light Sea Green */
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #FF6347;
+            outline: none;
+        }
+        .form-group .signature {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-group .signature div {
+            width: 48%;
+        }
+        .form-group .signature input {
+            width: 100%;
+        }
+        .submit-btn, .print-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #FF6347;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .submit-btn:hover, .print-btn:hover {
+            background-color: #E5533D;
+        }
+        .header-color {
+            color: #FF6347; /* Tomato */
+        }
+        .subheader-color {
+            color: #20B2AA; /* Light Sea Green */
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .form-row .form-group {
+            flex: 0 0 32%;
+        }
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .container, .container * {
+                visibility: visible;
+            }
+            .container {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                max-width: 100%;
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .submit-btn, .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header-color">ABC SCHOOL</h1>
+        <h2 class="subheader-color">Student Registration Form</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="student-number" class="header-color">Student Number:</label>
+                    <input type="text" id="student-number" name="student-number">
+                </div>
+                <div class="form-group">
+                    <label for="student-id" class="header-color">Student ID No:</label>
+                    <input type="text" id="student-id" name="student-id">
+                </div>
+                <div class="form-group">
+                    <label for="student-name" class="header-color">Student Name and Surname:</label>
+                    <input type="text" id="student-name" name="student-name">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="parent-name" class="header-color">Parent's Name, Surname, and ID No:</label>
+                    <input type="text" id="parent-name" name="parent-name">
+                </div>
+                <div class="form-group">
+                    <label for="parent-contact" class="header-color">Parent's Contact Number:</label>
+                    <input type="text" id="parent-contact" name="parent-contact">
+                </div>
+                <div class="form-group">
+                    <label for="previous-grade" class="header-color">Previous Year Grade Score:</label>
+                    <input type="text" id="previous-grade" name="previous-grade">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="registered-class" class="header-color">Registered Class:</label>
+                    <input type="text" id="registered-class" name="registered-class">
+                </div>
+                <div class="form-group">
+                    <label for="sibling-info" class="header-color">Sibling Information:</label>
+                    <textarea id="sibling-info" name="sibling-info"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="employee-discount" class="header-color">Employee Discount:</label>
+                    <input type="text" id="employee-discount" name="employee-discount">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="employee-school" class="header-color">Employee Deployed School:</label>
+                    <input type="text" id="employee-school" name="employee-school">
+                </div>
+                <div class="form-group">
+                    <label for="registration-date" class="header-color">Registration Date:</label>
+                    <input type="date" id="registration-date" name="registration-date">
+                </div>
+                <div class="form-group">
+                    <label for="registration-type" class="header-color">Registration Type:</label>
+                    <input type="text" id="registration-type" name="registration-type">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="tuition-fee" class="header-color">Tuition Fee:</label>
+                    <input type="text" id="tuition-fee" name="tuition-fee">
+                </div>
+                <div class="form-group">
+                    <label for="lunch-fee" class="header-color">Lunch Fee:</label>
+                    <input type="text" id="lunch-fee" name="lunch-fee">
+                </div>
+                <div class="form-group">
+                    <label for="cloth-fee" class="header-color">Cloth Fee:</label>
+                    <input type="text" id="cloth-fee" name="cloth-fee">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="books-fee" class="header-color">Books Fee:</label>
+                    <input type="text" id="books-fee" name="books-fee">
+                </div>
+                <div class="form-group">
+                    <label for="dormitory-fee" class="header-color">Dormitory Fee:</label>
+                    <input type="text" id="dormitory-fee" name="dormitory-fee">
+                </div>
+                <div class="form-group">
+                    <label for="total-fee" class="header-color">Total to be Paid:</label>
+                    <input type="text" id="total-fee" name="total-fee">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="installment-number" class="header-color">Installment Number:</label>
+                    <input type="text" id="installment-number" name="installment-number">
+                </div>
+                <div class="form-group">
+                    <label for="advanced-payment" class="header-color">Advanced Payment:</label>
+                    <input type="text" id="advanced-payment" name="advanced-payment">
+                </div>
+                <div class="form-group">
+                    <label for="installment-plan" class="header-color">Installment Payment Plan Dates:</label>
+                    <textarea id="installment-plan" name="installment-plan"></textarea>
+                </div>
+            </div>
+            <div class="form-row signature">
+                <div class="form-group">
+                    <label for="principal-signature" class="header-color">Principal's Name (Signature):</label>
+                    <input type="text" id="principal-signature" name="principal-signature">
+                </div>
+                <div class="form-group">
+                    <label for="parent-signature" class="header-color">Parent's Name (Signature):</label>
+                    <input type="text" id="parent-signature" name="parent-signature">
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+            <button type="button" class="print-btn" onclick="window.print()">Print</button>
+        </form>
+    </div>
+</body>
+</html>

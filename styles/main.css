@@ -1,0 +1,48 @@
+-web-app/styles/main.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.login-button {
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}

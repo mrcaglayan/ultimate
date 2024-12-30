@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/create_table.css">
+    <title>Dynamic Table</title>
+</head>
+<body>
+    <nav>Keywords: (Instalments- dropdowns: Paid) and Discount </nav>
+    <form id="headerForm">
+        <div id="headerInputs">
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year" required>
+            <label for="headername">Header Name:</label>
+            <input type="text" id="headername" name="headername" required>
+            <label for="datatype">Data Type:</label>
+            <select id="datatype" name="datatype" required>
+                <option value="text">Text</option>
+                <option value="number">Number</option>
+                <option value="dropdown">Dropdown</option>
+                <option value="date">Date</option>
+            </select>
+            <div id="dropdownOptions" style="display: none;">
+                <label for="options">Dropdown Options (comma-separated):</label>
+                <input type="text" id="options" name="options">
+            </div>
+            <label for="index">Insert at Index:</label>
+            <input type="number" id="index" name="index" min="0">
+        </div>
+        <button type="submit">Add to Table</button>
+    </form>
+
+    <div id="tablesContainer"></div>
+
+    <script src="../src/create_table.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/create_schools.css">
+    <title>Create Schools</title>
+</head>
+<body>
+    <div class="create-schools-container">
+        <h1>Create Schools</h1>
+        <div class="form-container">
+            <form id="school-form">
+                <div class="form-group">
+                    <label for="region">Region</label>
+                    <select id="region" name="region" required>
+                        <option value="">Select Region</option>
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <input type="number" id="year" name="year" required>
+                </div>
+                <div class="form-group">
+                    <label for="academic-year-start">Academic Year Start</label>
+                    <input type="date" id="academic-year-start" name="academic-year-start" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="academic-year-end">Academic Year End</label>
+                    <input type="date" id="academic-year-end" name="academic-year-end" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="semester-start">Semester Start</label>
+                    <input type="date" id="semester-start" name="semester-start" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="semester-end">Semester End</label>
+                    <input type="date" id="semester-end" name="semester-end" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="school-name">School Name</label>
+                    <input type="text" id="school-name" name="school-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="tuition-fee">Tuition Fee</label>
+                    <input type="number" id="tuition-fee" name="tuition-fee" required>
+                </div>
+                <div class="form-group">
+                    <label for="lunch-fee">Lunch Fee</label>
+                    <input type="number" id="lunch-fee" name="lunch-fee" required>
+                </div>
+                <div class="form-group">
+                    <label for="cloth">Cloth</label>
+                    <input type="number" id="cloth" name="cloth" required>
+                </div>
+                <div class="form-group">
+                    <label for="books">Books</label>
+                    <input type="number" id="books" name="books" required>
+                </div>
+                <div class="form-group">
+                    <label for="dormitory">Dormitory</label>
+                    <input type="number" id="dormitory" name="dormitory" required>
+                </div>
+                <button type="button" id="add-school" class="action-button">Add School</button>
+            </form>
+            <div id="school-list-container">
+                <ul>
+                    <!-- Example list item -->
+                    <li>
+                        <span>2023 - Example School - Tuition Fee: 1000, Lunch Fee: 200, Cloth: 100, Books: 150, Dormitory: 300</span>
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button type="button" id="back-button" class="back-button">Back to Admin</button>
+    </div>
+    <script src="../src/create_schools.js"></script>
+</body>
+</html>

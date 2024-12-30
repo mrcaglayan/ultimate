@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/user.css">
+    <title>Student Enrollment Page</title>
+</head>
+<body>
+    <div class="user-dashboard-container">
+        <!-- New Registration Button -->
+
+
+        <!-- Entry Modal Structure -->
+        <div id="entry-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <form id="entry-form">
+                    <div id="table-container"></div>
+                    <button type="button" id="add-entry">Submit Enrollment</button>
+                    <button type="button" id="preview-entry">Preview</button>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div id="entry-list-container">
+            <table id="entry-list" class="modern-table">
+                <thead>
+                    <tr>
+                        <!-- Headers will be dynamically added here -->
+                    </tr>
+                </thead>
+                <tbody id="student-list">
+                    <!-- Entries will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+                <!-- Search Modal Structure -->
+                <div id="search-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-search-modal">&times;</span>
+                        <input type="text" id="search-tezkere" placeholder="Search by Tezkere No">
+                        <button id="search-button">Search</button>
+                    </div>
+                </div>
+    </div>
+    <div id="installmentsModal" class="modal">
+        <div class="modal-content" id="installmentsModalContent">
+            <span class="close" id="closeModal">&times;</span>
+            <div id="installmentsContainer"></div>
+        </div>
+    </div>
+    <script type="module" src="../src/user.js"></script>
+</body>
+<footer id="page-footer">
+    <button type="button" id="back-button">Back to Home</button>
+    <button onclick="goNext()">Next</button>
+  </footer>
+</html>

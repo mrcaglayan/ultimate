@@ -1,0 +1,130 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"],
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover,
+button:hover {
+    background-color: #0056b3;
+}
+
+#dropdownOptions {
+    display: none;
+}
+
+table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    margin-right: 10px;
+}
+
+button:last-child {
+    margin-right: 0;
+}
+
+#headerRow th {
+    position: relative;
+}
+
+#headerRow th[contenteditable="true"] {
+    border: 2px dashed #007bff;
+}
+
+#headerRow th[contenteditable="true"]:focus {
+    outline: none;
+}
+
+#headerRow th[contenteditable="true"]::after {
+    content: ' (editing)';
+    color: #ff0000;
+    font-size: 0.8em;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Additional Styles for Spacing and Alignment */
+#headerForm {
+    margin-bottom: 60px; /* Add more space between form and table */
+}
+
+#dynamicTable {
+    margin-bottom: 60px; /* Add more space between table and other elements */
+}
