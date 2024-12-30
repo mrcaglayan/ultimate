@@ -269,7 +269,7 @@ function saveTables() {
         Object.entries(tables).map(([year, tableArray]) => [year, tableArray.filter(table => table !== null)])
     );
 
-    fetch('/save-tables', {
+    fetch('/api/save-tables', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -288,7 +288,7 @@ function saveTables() {
 }
 
 function fetchTables() {
-    fetch('/fetch-tables')
+    fetch('/api/fetch-tables')
     .then(response => response.json())
     .then(data => {
         tables = data.tables;

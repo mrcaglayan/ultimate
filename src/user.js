@@ -35,7 +35,7 @@ function gatherEntryData() {
     return entryData;
 }
 function saveData(endpoint, data, username, selectedYear) {
-    fetch('/data.json')
+    fetch('data/data.json')
     .then(response => {
         if (!response.ok) {
             throw new Error(`Network response was not ok: ${response.statusText}`);
@@ -512,7 +512,7 @@ applyButton.id = 'apply-button';
 document.getElementById('search-modal').querySelector('.modal-content').appendChild(applyButton);
 
 applyButton.addEventListener('click', () => {
-    fetch('/data.json') // Ensure the path is correct
+    fetch('data/data.json') // Ensure the path is correct
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
