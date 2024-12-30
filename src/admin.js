@@ -31,10 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'index.html';
     });
 
+<<<<<<< HEAD
     document.getElementById('extract-data').addEventListener('click', function() {
         window.location.href = 'extractpage.html';
     });
 
+=======
+>>>>>>> 12e26cfac549ca3779477a53566193ec449ba1cf
 
     function resetServer() {
         fetch('/api/tables', {
