@@ -34,6 +34,7 @@ let data = {
     students: [],
     completeentrydb: [],
     allDiscountOptions: [],
+    inputs: []
 };
 
 // Load data from JSON file
