@@ -137,6 +137,16 @@
           " %10 Country Discount",
           " %5 Country Discount"
         ]
+      },
+      {
+        "id": 1735578142771,
+        "headername": "6.Discount",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "test"
+        ]
       }
     ],
     "2025": [

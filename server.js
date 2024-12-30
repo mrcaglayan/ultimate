@@ -284,11 +284,25 @@ app.get('/api/allDiscountOptions', (req, res) => {
     }
 });
 
+// Endpoint to fetch tables
+app.get('/fetch-tables', (req, res) => {
+    fs.readFile(dataFilePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading data:', err);
+            return res.status(500).send('Error reading data');
+        }
+        const jsonData = JSON.parse(data);
+        res.json({ tables: jsonData.tables });
+    });
+});
+
+// Endpoint to save tables
 app.post('/save-tables', (req, res) => {
     const newTables = req.body;
     // Read the existing data.json file
     fs.readFile(dataFilePath, 'utf8', (err, data) => {
         if (err) {
+            console.error('Error reading data:', err);
             return res.status(500).send('Error reading data');
         }
         // Parse the existing data
@@ -298,21 +312,11 @@ app.post('/save-tables', (req, res) => {
         // Write the updated data back to data.json
         fs.writeFile(dataFilePath, JSON.stringify(jsonData, null, 2), (err) => {
             if (err) {
+                console.error('Error saving data:', err);
                 return res.status(500).send('Error saving data');
             }
             res.send('Data saved successfully');
         });
-    });
-});
-
-// Endpoint to fetch tables
-app.get('/fetch-tables', (req, res) => {
-    fs.readFile(dataFilePath, 'utf8', (err, data) => {
-        if (err) {
-            return res.status(500).send('Error reading data');
-        }
-        const jsonData = JSON.parse(data);
-        res.json({ tables: jsonData.tables });
     });
 });
 
@@ -349,7 +353,7 @@ app.get('/api/inputs', (req, res) => {
 
 // Serve the favicon.ico file
 app.get('/favicon.ico', (req, res) => {
-    res.sendFile(join(__dirname, 'favicon.ico'));
+    res.sendFile(dataFilePath);
 });
 
 app.listen(port, () => {
