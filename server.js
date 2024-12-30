@@ -6,7 +6,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Define __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -20,11 +20,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
 app.use('/src', express.static(path.join(__dirname, 'src')));
 
-// Serve the root directory as static files
-app.use(express.static(__dirname));
-
 // Serve data.json as a static file
 app.use('/data', express.static(__dirname));
+
+// Serve the root directory as static files
+app.use(express.static(__dirname));
 
 const dataFilePath = path.join(__dirname, 'data.json');
 let data = {
@@ -353,3 +353,6 @@ app.get('/favicon.ico', (req, res) => {
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+
+
+export default app;
