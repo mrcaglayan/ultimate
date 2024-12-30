@@ -269,7 +269,7 @@ function saveTables() {
         Object.entries(tables).map(([year, tableArray]) => [year, tableArray.filter(table => table !== null)])
     );
 
-    fetch('/api/save-tables', {
+    fetch('/save-tables', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -288,18 +288,25 @@ function saveTables() {
 }
 
 function fetchTables() {
-    fetch('/api/tables')
-    .then(response => response.json())
+    fetch('/fetch-tables')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.statusText}`);
+        }
+        return response.json();
+    })
     .then(data => {
+        if (!data.tables) {
+            throw new Error('Tables data is undefined or null');
+        }
         tables = data.tables;
         Object.keys(tables).forEach(year => renderTable(year));
     })
     .catch(error => {
-        console.error('Error:', error);
+        console.error('Error fetching data:', error);
         alert('Error fetching data');
     });
 }
-
 // Create a container for the form and the table
 const container = document.createElement('div');
 document.body.appendChild(container);

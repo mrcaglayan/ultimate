@@ -305,8 +305,9 @@ app.post('/save-tables', (req, res) => {
     });
 });
 
-app.get('/tables', (req, res) => {
-    fs.readFile(join(__dirname, 'data.json'), 'utf8', (err, data) => {
+// Endpoint to fetch tables
+app.get('/fetch-tables', (req, res) => {
+    fs.readFile(dataFilePath, 'utf8', (err, data) => {
         if (err) {
             return res.status(500).send('Error reading data');
         }
@@ -314,6 +315,7 @@ app.get('/tables', (req, res) => {
         res.json({ tables: jsonData.tables });
     });
 });
+
 
 // Endpoint to handle POST request for inputs
 app.post('/api/inputs', (req, res) => {
