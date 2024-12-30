@@ -1,0 +1,194 @@
+/* General table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  table-layout: fixed; /* Fixed layout for columns */
+  overflow-x: auto; /* Enable horizontal scroll if needed */
+}
+
+/* Table cell height enforcement */
+table td, table th {
+  height: auto; /* Allow height to adjust based on content */
+  line-height: 1.5; /* Adjust line height for better readability */
+  overflow: hidden; /* Prevent content overflow */
+  white-space: normal; /* Allow text wrapping */
+  box-sizing: border-box; /* Include padding in height calculation */
+  padding: 0.35rem; /* Reduced by 30% */
+  text-align: center; /* Center text in table cells */
+  border: 1px solid #ddd; /* Add border to cells */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor to indicate clickable */
+  word-wrap: break-word; /* Wrap long words in cells */
+  max-width: 100px; /* Set a maximum width for each column */
+  text-overflow: ellipsis; /* Show ellipsis for overflowing content */
+}
+
+table thead tr {
+  padding-bottom: 7px !important; /* Adjust padding for header cells */
+}
+
+td, th {
+  padding: 0 !important; /* Remove padding for precise height */
+  vertical-align: middle; /* Vertically align content in the middle */
+}
+
+/* Additional styles for visual feedback */
+thead th {
+  background-color: #f2f2f2;
+  padding: 0.35rem; /* Reduced by 30% */
+  text-align: center; /* Center text in header cells */
+  border-bottom: 2px solid #ddd;
+  position: relative; /* Ensure relative positioning for search boxes */
+  height: 80px; /* Increase header height */
+  background: linear-gradient(to bottom, #ffffff, #b2d60f); /* Gradient background */
+  max-width: 100px; /* Limit header column width */
+  overflow: hidden; /* Prevent text overflow */
+  text-overflow: ellipsis; /* Add ellipsis if content overflows */
+  white-space: nowrap; /* Prevent text wrapping in headers */
+}
+
+/* Make text in student list table cells bold and red */
+#student-list td, #student-list th {
+  font-weight: bold;
+  color: red;
+}
+
+/* Table body styling */
+tbody td {
+  border-bottom: 1px solid #ddd;
+  max-width: 100px; /* Set a maximum width for body columns */
+}
+
+/* Hover effect for table rows */
+tbody tr:hover td {
+  background-color: #ffa500 !important; /* Orange background on hover */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Highlighted row */
+tbody tr.highlighted {
+  background-color: #0f0f0f; /* Slightly darker grey for highlighted rows */
+}
+
+/* Button styling */
+button {
+  padding: 0.315rem 0.63rem; /* Reduced by 10% */
+  margin: 0.1575rem; /* Reduced by 10% */
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Input focus styling */
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Search box styling */
+thead th {
+  position: relative; /* Ensure relative positioning for search boxes */
+}
+
+thead th input[type="text"] {
+  position: absolute;
+  top: 50%; /* Position search box below the header name */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transform: translateY(50%); /* Center the search box vertically */
+}
+
+/* Make the button container sticky */
+#button-container {
+  position: sticky;
+  top: 0; /* Position it at the very top of the viewport */
+  background-color: white; /* Add background to avoid overlap */
+  z-index: 1000; /* Ensure it appears above other elements */
+  padding: 10px;
+  margin: 0; /* Remove any margin */
+  width: 100%; /* Ensure it spans the full width */
+  box-sizing: border-box; /* Prevent the width from being affected by padding */
+}
+
+/* Make the table header sticky */
+table thead th {
+  position: sticky;
+  top: 50px; /* Adjust this to match the height of the button container */
+  background-color: white; /* Add background to avoid overlap */
+  z-index: 999; /* Ensure it appears above the table body but below the button container */
+  margin: 0; /* Remove any margin */
+}
+
+/* Optional: Additional styles to ensure the layout is correct */
+body {
+  margin-top: 0; /* Remove default body margin */
+}
+
+/* Footer styling */
+#page-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 0.35rem;
+  text-align: center;
+  border-top: 2px solid #ddd;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Add scroll container if table overflows */
+.table-container {
+  max-width: 100%;
+  overflow-x: auto; /* Enable horizontal scroll if content overflows */
+}
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0, 0, 0, 0.432); /* Background shadowing */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* Center the modal */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+}
+
+.close-button, .close-search-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover, .close-button:focus,
+.close-search-modal:hover, .close-search-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

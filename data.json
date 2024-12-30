@@ -1,0 +1,460 @@
+{
+  "users": [
+    {
+      "username": "soma",
+      "password": "soma",
+      "schoolName": "Kabil İlk Okulu"
+    },
+    {
+      "username": "ufuk",
+      "password": "ufuk",
+      "schoolName": "Ariyana High School"
+    }
+  ],
+  "tables": {
+    "2024": [
+      {
+        "id": 1734885737566,
+        "headername": "Registeration Date",
+        "Data": "2024-02-01",
+        "DataField": "Locked",
+        "Datatype": "date",
+        "options": []
+      },
+      {
+        "id": 1735198333882,
+        "headername": "Student Tezkere No",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "number",
+        "options": []
+      },
+      {
+        "id": 1734885743974,
+        "headername": "Student's Name",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "text",
+        "options": []
+      },
+      {
+        "id": 1734885760434,
+        "headername": "Stutend's Surname",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "text",
+        "options": []
+      },
+      {
+        "id": 1735197248486,
+        "headername": "Class",
+        "Data": "Choose",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "Choose",
+          "1-A",
+          "2-A",
+          "3-A",
+          "4-A",
+          "5-A",
+          "6-A"
+        ]
+      },
+      {
+        "id": 1734941541297,
+        "headername": "Instalments",
+        "Data": "Choose",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "Choose",
+          " Paid",
+          " 1.Instalment",
+          " 2 Instalments",
+          " 3 Instalments",
+          " 4 Instalments"
+        ]
+      },
+      {
+        "id": 1735198082363,
+        "headername": "1.Discount",
+        "Data": "Tam Ücret",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "Tam Ücret",
+          " %100 Magis Bursu",
+          " %75 Vakıf Çalışanı",
+          "%50 İhtiyaç İndirimi",
+          " %25 İhtiyaç Bursu"
+        ]
+      },
+      {
+        "id": 1735198033101,
+        "headername": "2.Discount",
+        "Data": "No Sibling",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "No Sibling",
+          " %10 Sibling Discount"
+        ]
+      },
+      {
+        "id": 1735198113488,
+        "headername": "3.Discount",
+        "Data": "Kademe Yok",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "Kademe Yok",
+          " %10 Kademe İndirimi"
+        ]
+      },
+      {
+        "id": 1735198191864,
+        "headername": "4.Discount",
+        "Data": "No Downpayment",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "No Downpayment",
+          " %10 Downpayment",
+          " %5 Downpayment"
+        ]
+      },
+      {
+        "id": 1735198241395,
+        "headername": "5.Discount",
+        "Data": "No Country Discount",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "No Country Discount",
+          " %20 Country Discount",
+          " %15 Country Discount",
+          " %10 Country Discount",
+          " %5 Country Discount"
+        ]
+      }
+    ],
+    "2025": [
+      {
+        "id": 1735067655680,
+        "headername": "Registeration Date",
+        "Data": "2024-02-01",
+        "DataField": "Locked",
+        "Datatype": "date",
+        "options": []
+      },
+      {
+        "id": 1735203777140,
+        "headername": "Tezkere No",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "number",
+        "options": []
+      },
+      {
+        "id": 1735067686639,
+        "headername": "Student's Name",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "text",
+        "options": []
+      },
+      {
+        "id": 1735203796660,
+        "headername": "Stutend's Surname",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "text",
+        "options": []
+      },
+      {
+        "id": 1735203826115,
+        "headername": "Class",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "Choose",
+          "1-A",
+          "2-A",
+          "3-A",
+          "4-A",
+          "5-A",
+          "6-A"
+        ]
+      },
+      {
+        "id": 1735067768189,
+        "headername": "Instalments",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "Paid",
+          " 1.Instalment",
+          " 2 Instalments",
+          " 3 Instalments",
+          " 4 Installments"
+        ]
+      },
+      {
+        "id": 1735203863434,
+        "headername": "1.Discount",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "Tam Ücret",
+          " %100 Magis Bursu",
+          " %75 Vakıf Çalışanı",
+          "%50 İhtiyaç İndirimi",
+          " %25 İhtiyaç Bursu"
+        ]
+      },
+      {
+        "id": 1735203895155,
+        "headername": "2.Discount",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "No Sibling",
+          " %10 Sibling Discount"
+        ]
+      },
+      {
+        "id": 1735203905636,
+        "headername": "3.Discount",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "Kademe Yok",
+          " %10 Kademe İndirimi"
+        ]
+      },
+      {
+        "id": 1735204012476,
+        "headername": "4.Discount",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "No Downpayment",
+          " %10 Downpayment",
+          " %5 Downpayment"
+        ]
+      },
+      {
+        "id": 1735204034058,
+        "headername": "5.Discount",
+        "Data": "",
+        "DataField": "NotLocked",
+        "Datatype": "dropdown",
+        "options": [
+          "No Country Discount",
+          " %20 Country Discount",
+          " %15 Country Discount",
+          " %10 Country Discount",
+          " %5 Country Discount",
+          " %1 Country Discount"
+        ]
+      }
+    ]
+  },
+  "schools": [
+    {
+      "year": 2024,
+      "name": "Kabil İlk Okulu",
+      "tuitionFee": 120000,
+      "lunchFee": 20000,
+      "cloth": 0,
+      "books": 0,
+      "dormitory": 0,
+      "academicYearStart": "2024-02-01T00:00:00.000Z",
+      "academicYearEnd": "2024-12-31T00:00:00.000Z",
+      "semesterStart": "2024-07-01T00:00:00.000Z",
+      "semesterEnd": "2024-08-31T00:00:00.000Z"
+    },
+    {
+      "year": 2025,
+      "name": "Kabil İlk Okulu",
+      "tuitionFee": 120000,
+      "lunchFee": 20000,
+      "cloth": 0,
+      "books": 0,
+      "dormitory": 0,
+      "academicYearStart": "2025-02-01T00:00:00.000Z",
+      "academicYearEnd": "2025-12-31T00:00:00.000Z",
+      "semesterStart": "2025-07-01T00:00:00.000Z",
+      "semesterEnd": "2025-08-31T00:00:00.000Z"
+    },
+    {
+      "year": 2025,
+      "name": "Ariyana High School",
+      "tuitionFee": 230000,
+      "lunchFee": 20000,
+      "cloth": 0,
+      "books": 0,
+      "dormitory": 0,
+      "academicYearStart": "2025-02-01T00:00:00.000Z",
+      "academicYearEnd": "2025-12-31T00:00:00.000Z",
+      "semesterStart": "2025-07-01T00:00:00.000Z",
+      "semesterEnd": "2025-08-31T00:00:00.000Z"
+    }
+  ],
+  "students": [
+    {
+      "Registeration Date": "2024-02-01",
+      "Student Tezkere No": "123",
+      "Student's Name": "123",
+      "Stutend's Surname": "123",
+      "Class": "Choose",
+      "Instalments": {},
+      "1.Discount": "Tam Ücret",
+      "2.Discount": "No Sibling",
+      "3.Discount": "Kademe Yok",
+      "4.Discount": "No Downpayment",
+      "5.Discount": "No Country Discount",
+      "username": "soma",
+      "selectedYear": "2024",
+      "id": 1735569629667,
+      "RegistrationType": "New Registration"
+    }
+  ],
+  "completeentrydb": [
+    {
+      "Registeration Date": "2024-02-01",
+      "Student Tezkere No": "123",
+      "Student's Name": "123",
+      "Stutend's Surname": "123",
+      "Class": "Choose",
+      "Instalments": {},
+      "1.Discount": "Tam Ücret",
+      "2.Discount": "No Sibling",
+      "3.Discount": "Kademe Yok",
+      "4.Discount": "No Downpayment",
+      "5.Discount": "No Country Discount",
+      "year": 2024,
+      "name": "Kabil İlk Okulu",
+      "tuitionFee": 120000,
+      "lunchFee": 20000,
+      "cloth": 0,
+      "books": 0,
+      "dormitory": 0,
+      "academicYearStart": "2024-02-01T00:00:00.000Z",
+      "academicYearEnd": "2024-12-31T00:00:00.000Z",
+      "semesterStart": "2024-07-01T00:00:00.000Z",
+      "semesterEnd": "2024-08-31T00:00:00.000Z",
+      "username": "soma",
+      "id": 1735569629667,
+      "RegistrationType": "New Registration"
+    },
+    {
+      "Registeration Date": "2024-02-01",
+      "Student Tezkere No": "123",
+      "Student's Name": "123",
+      "Stutend's Surname": "123",
+      "Class": "Choose",
+      "Instalments": {},
+      "1.Discount": "Tam Ücret",
+      "2.Discount": "No Sibling",
+      "3.Discount": "Kademe Yok",
+      "4.Discount": "No Downpayment",
+      "5.Discount": "No Country Discount",
+      "year": 2024,
+      "name": "Kabil İlk Okulu",
+      "tuitionFee": 120000,
+      "lunchFee": 20000,
+      "cloth": 0,
+      "books": 0,
+      "dormitory": 0,
+      "academicYearStart": "2024-02-01T00:00:00.000Z",
+      "academicYearEnd": "2024-12-31T00:00:00.000Z",
+      "semesterStart": "2024-07-01T00:00:00.000Z",
+      "semesterEnd": "2024-08-31T00:00:00.000Z",
+      "username": "soma",
+      "id": 1735569666580,
+      "RegistrationType": "Renewed Registration"
+    }
+  ],
+  "allDiscountOptions": [
+    {
+      "option": "Tam Ücret",
+      "discountRate": 1
+    },
+    {
+      "option": "No Sibling",
+      "discountRate": 1
+    },
+    {
+      "option": " %100 Magis Bursu",
+      "discountRate": 0
+    },
+    {
+      "option": " %75 Vakıf Çalışanı",
+      "discountRate": 0.25
+    },
+    {
+      "option": "%50 İhtiyaç İndirimi",
+      "discountRate": 0.5
+    },
+    {
+      "option": " %25 İhtiyaç Bursu",
+      "discountRate": 0.75
+    },
+    {
+      "option": " %10 Sibling Discount",
+      "discountRate": 0.9
+    },
+    {
+      "option": "Kademe Yok",
+      "discountRate": 1
+    },
+    {
+      "option": " %10 Kademe İndirimi",
+      "discountRate": 0.9
+    },
+    {
+      "option": "No Downpayment",
+      "discountRate": 1
+    },
+    {
+      "option": " %10 Downpayment",
+      "discountRate": 9.9
+    },
+    {
+      "option": " %5 Downpayment",
+      "discountRate": 0.95
+    },
+    {
+      "option": "No Country Discount",
+      "discountRate": 1
+    },
+    {
+      "option": " %20 Country Discount",
+      "discountRate": 0.8
+    },
+    {
+      "option": " %15 Country Discount",
+      "discountRate": 0.85
+    },
+    {
+      "option": " %10 Country Discount",
+      "discountRate": 0.9
+    },
+    {
+      "option": " %5 Country Discount",
+      "discountRate": 0.95
+    }
+  ],
+  "inputs": [
+    1,
+    3
+  ]
+}

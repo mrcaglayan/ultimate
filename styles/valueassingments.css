@@ -1,0 +1,216 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Space between table and form */
+    width: 100%;
+    max-width: 1200px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"],
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover,
+button:hover {
+    background-color: #0056b3;
+}
+
+#dropdownOptions {
+    display: none;
+}
+
+table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 40px; /* Add space below the table */
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    margin-right: 10px;
+}
+
+button:last-child {
+    margin-right: 0;
+}
+
+#headerRow th {
+    position: relative;
+}
+
+#headerRow th[contenteditable="true"] {
+    border: 2px dashed #007bff;
+}
+
+#headerRow th[contenteditable="true"]:focus {
+    outline: none;
+}
+
+#headerRow th[contenteditable="true"]::after {
+    content: ' (editing)';
+    color: #ff0000;
+    font-size: 0.8em;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Additional Styles for Spacing and Alignment */
+#headerInputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#headerInputs label,
+#headerInputs input,
+#headerInputs select,
+#headerInputs div {
+    flex: 1 1 100%;
+    min-width: 200px;
+}
+
+#headerInputs div {
+    display: flex;
+    flex-direction: column;
+}
+
+#headerInputs input[type="number"] {
+    max-width: 100px;
+}
+
+#dataRow td {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px; /* Ensure padding is consistent */
+}
+
+/* Styles for the tables display */
+#tables-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#tables-container li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#tables-container input[type="number"] {
+    width: 150px;
+    margin-right: 10px;
+}
+
+#tables-container button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#tables-container button:hover {
+    background-color: #218838;
+}
+
+#tables-container span {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.back-to-admin-from-value-page {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.back-to-admin-from-value-page:hover {
+    background-color: #c82333;
+}
