@@ -305,7 +305,7 @@ app.post('/save-tables', (req, res) => {
     });
 });
 
-app.get('/fetch-tables', (req, res) => {
+app.get('/tables', (req, res) => {
     fs.readFile(join(__dirname, 'data.json'), 'utf8', (err, data) => {
         if (err) {
             return res.status(500).send('Error reading data');

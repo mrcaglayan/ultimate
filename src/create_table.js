@@ -288,7 +288,7 @@ function saveTables() {
 }
 
 function fetchTables() {
-    fetch('/api/fetch-tables')
+    fetch('/api/tables')
     .then(response => response.json())
     .then(data => {
         tables = data.tables;
