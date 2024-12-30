@@ -287,7 +287,7 @@ app.get('/api/allDiscountOptions', (req, res) => {
 app.post('/save-tables', (req, res) => {
     const newTables = req.body;
     // Read the existing data.json file
-    fs.readFile(join(__dirname, 'data.json'), 'utf8', (err, data) => {
+    fs.readFile(dataFilePath, 'utf8', (err, data) => {
         if (err) {
             return res.status(500).send('Error reading data');
         }
@@ -296,7 +296,7 @@ app.post('/save-tables', (req, res) => {
         // Update the tables object
         jsonData.tables = newTables;
         // Write the updated data back to data.json
-        fs.writeFile(join(__dirname, 'data.json'), JSON.stringify(jsonData, null, 2), (err) => {
+        fs.writeFile(dataFilePath, JSON.stringify(jsonData, null, 2), (err) => {
             if (err) {
                 return res.status(500).send('Error saving data');
             }
