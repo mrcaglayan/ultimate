@@ -12,13 +12,9 @@
   "dependencies": {
     "core-js": "^3.39.0",
     "cors": "^2.8.5",
-<<<<<<< HEAD
     "express": "^4.17.1",
     "file-saver": "^2.0.5",
     "xlsx": "^0.18.5"
-=======
-    "express": "^4.17.1"
->>>>>>> 12e26cfac549ca3779477a53566193ec449ba1cf
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.0",
@@ -31,16 +27,12 @@
   "engines": {
     "node": ">=14.x"
   },
-<<<<<<< HEAD
   "keywords": [
     "web",
     "app",
     "login",
     "admin"
   ],
-=======
-  "keywords": ["web", "app", "login", "admin"],
->>>>>>> 12e26cfac549ca3779477a53566193ec449ba1cf
   "author": "Your Name",
   "license": "ISC"
 }
