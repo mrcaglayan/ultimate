@@ -20,17 +20,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
 app.use('/src', express.static(path.join(__dirname, 'src')));
 
+// Serve the root directory as static files
+app.use(express.static(__dirname));
+
+// Serve data.json as a static file
+app.use('/data', express.static(__dirname));
+
 const dataFilePath = path.join(__dirname, 'data.json');
 let data = {
     users: [],
     tables: {},
     schools: [],
     students: [],
-    completeentrydb: [], // Add completeentrydb array
-    allDiscountOptions: [], // Add allDiscountOptions array
+    completeentrydb: [],
+    allDiscountOptions: [],
 };
 
-// Load data from JSON file
 // Load data from JSON file
 function loadData() {
     if (fs.existsSync(dataFilePath)) {
@@ -40,11 +45,9 @@ function loadData() {
 }
 
 // Save data to JSON file
-// Save data to JSON file
 function saveData() {
     fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
 }
-
 
 loadData();
 
