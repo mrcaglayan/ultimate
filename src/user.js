@@ -25,7 +25,12 @@ export function addEntry(username, rawInstallments, selectedYear) {
     const completeEntry = { ...entryData, ...schoolBasedOnYearAndSchoolName, username, id: uniqueId, Instalments: rawInstallments, RegistrationType: registrationType };
     saveData('students', studentData, username, selectedYear);
     saveData('completeentrydb', completeEntry);
+    closeModal('entry-modal');
 }
+
+document.getElementById('add-entry').addEventListener('click', () => {
+    openModal('entry-modal');
+});
 function gatherEntryData() {
     const entryData = {};
     document.querySelectorAll('#entry-form input, #entry-form select').forEach(input => {
@@ -507,46 +512,56 @@ document.getElementById('search-button').addEventListener('click', () => {
                 document.getElementById('search-modal').querySelector('.modal-content').appendChild(studentInfoTable);
 
                 const applyButton = document.createElement('button');
-applyButton.textContent = 'Apply';
-applyButton.id = 'apply-button';
-document.getElementById('search-modal').querySelector('.modal-content').appendChild(applyButton);
+                applyButton.textContent = 'Apply';
+                applyButton.id = 'apply-button';
+                document.getElementById('search-modal').querySelector('.modal-content').appendChild(applyButton);
 
-applyButton.addEventListener('click', () => {
-    fetch('data/data.json') // Ensure the path is correct
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
+                applyButton.addEventListener('click', () => {
+                    fetch('data/data.json') // Ensure the path is correct
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log(data);
 
-            // Extract the indexesforinformationpass values
-            const indexes = data.inputs
-            console.log(indexes)
-            if (!Array.isArray(indexes) || indexes.some(index => isNaN(index) || index < 0 || index >= tableHeaders.length)) {
-                alert('Invalid index values');
-                return;
-            }
+                            // Extract the indexesforinformationpass values
+                            const indexes = data.inputs;
+                            console.log(indexes);
+                            if (!Array.isArray(indexes) || indexes.some(index => isNaN(index) || index < 0 || index >= tableHeaders.length)) {
+                                alert('Invalid index values');
+                                return;
+                            }
 
-            openModal('entry-modal');
-            closeModal('search-modal');
+                            openModal('entry-modal');
+                            closeModal('search-modal');
 
-            indexes.forEach(index => {
-                const header = tableHeaders[index];
-                const input = document.getElementById(`entry-${header.headername}`);
-                if (input) {
-                    input.value = student[header.headername] || '';
-                    input.disabled = true; // Lock the inputs to prevent editing
-                }
-            });
-        })
-        .catch(error => {
-            console.error('Failed to fetch index data:', error);
-            handleError('Failed to fetch index data', error);
-        });
-});
+                            indexes.forEach(index => {
+                                const header = tableHeaders[index];
+                                const input = document.getElementById(`entry-${header.headername}`);
+                                if (input) {
+                                    input.value = student[header.headername] || '';
+                                    input.disabled = true; // Lock the inputs to prevent editing
+                                }
+                            });
+
+                            // Remove the searched table and student info table
+                            const previousResults = document.getElementById('student-info-table');
+                            if (previousResults) {
+                                previousResults.remove();
+                            }
+                            const previousApplyButton = document.getElementById('apply-button');
+                            if (previousApplyButton) {
+                                previousApplyButton.remove();
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Failed to fetch index data:', error);
+                            handleError('Failed to fetch index data', error);
+                        });
+                });
             } else {
                 alert('Student not found');
             }
@@ -560,9 +575,19 @@ applyButton.addEventListener('click', () => {
     }
 });
 
+newRegistrationButton.addEventListener('click', () => {
+    openModal('entry-modal');
+    // Clear the entry form for a fresh entry
+    document.querySelectorAll('#entry-form input, #entry-form select').forEach(input => {
+        input.value = '';
+        input.disabled = false; // Enable inputs for new registration
+    });
+});
+
     newRegistrationButton.addEventListener('click', () => {
         openModal('entry-modal');
     });
+
 
     const closeButton = document.querySelector('.close-button');
     closeButton.addEventListener('click', () => {
@@ -586,6 +611,7 @@ applyButton.addEventListener('click', () => {
     document.getElementById('add-entry').addEventListener('click', () => {
         const rawInstallments = gatherInstallmentData();
         addEntry(username, rawInstallments, selectedYear);
+        closeModal('entry-modal');
     });
 
     document.getElementById('preview-entry').addEventListener('click', previewEntry);
