@@ -2,7 +2,7 @@ let studentsInfoWithoutFee = [];
 let allDiscountOptionsforFee = [];
 
 // Fetch the completeentrydb list from the server and store it in studentsInfoWithoutFee variable
-fetch('/api/completeentrydb')
+fetch('/api/students')
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -70,7 +70,7 @@ function convertToNumber(value) {
     return value;
 }
 
-function applyDiscounts(proratedFee, student) {
+export function applyDiscounts(proratedFee, student) {
     const discountOptions = Object.keys(student).filter(key => key.includes('Discount')).map(key => student[key].trim());
     let finalTuitionFee = proratedFee;
 
@@ -130,8 +130,13 @@ function calculateFees() {
     return invoicedStudentList;
 }
 
+export { allDiscountOptionsforFee }; // Export the discount options for testing purposes
+// Export the calculateFees function for use in other modules
+export { calculateFees };
+
 // Add a button to trigger the logging of the data to the console
 const logButton = document.createElement('button');
 logButton.textContent = 'Log Students Info';
 logButton.onclick = calculateFees;
 document.body.appendChild(logButton);
+

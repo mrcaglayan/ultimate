@@ -47,6 +47,7 @@ function lockDateFields() {
 
 function addSchool() {
     const year = document.getElementById('year').value.trim();
+    const schoolcode = document.getElementById('school-coder').value.trim();
     const schoolName = document.getElementById('school-name').value.trim();
     const tuitionFee = document.getElementById('tuition-fee').value.trim();
     const lunchFee = document.getElementById('lunch-fee').value.trim();
@@ -74,6 +75,7 @@ function addSchool() {
         const school = {
             year: parseInt(year),
             name: schoolName,
+            schoolcode: schoolcode,
             tuitionFee: parseFloat(tuitionFee),
             lunchFee: parseFloat(lunchFee),
             cloth: parseFloat(cloth),

@@ -25,7 +25,6 @@ fetch(`/api/schools`)
     } else {
       console.error('Error: Multiple or no schools found for the given year and name.');
     }
-    console.log(`School based on year and name: ${JSON.stringify(schoolBasedOnYearAndSchoolName)}`);
   })
   .catch(error => console.error('Error fetching data:', error));
 

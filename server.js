@@ -32,7 +32,6 @@ let data = {
     tables: {},
     schools: [],
     students: [],
-    completeentrydb: [],
     allDiscountOptions: [],
     inputs: []
 };
@@ -52,34 +51,30 @@ function saveData() {
 
 loadData();
 
-app.get('/api/completeentrydb', (req, res) => {
-    const studenttezkereNo = req.query.studenttezkereNo;
-    const schoolName = req.query.schoolName;
+//to delete  instalments
+app.put('/api/students/:id', (req, res) => {
+    const studentId = parseInt(req.params.id, 10); // Convert studentId to a number
+    const studentIndex = data.students.findIndex(student => student.id === studentId);
+    if (studentIndex !== -1) {
+        // Remove existing installment data
+        for (let i = 1; i <= 12; i++) {
+            delete data.students[studentIndex][`${i}st Installment Date`];
+            delete data.students[studentIndex][`${i}st Installment Amount`];
+            delete data.students[studentIndex][`${i}nd Installment Date`];
+            delete data.students[studentIndex][`${i}nd Installment Amount`];
+            delete data.students[studentIndex][`${i}rd Installment Date`];
+            delete data.students[studentIndex][`${i}rd Installment Amount`];
+            delete data.students[studentIndex][`${i}th Installment Date`];
+            delete data.students[studentIndex][`${i}th Installment Amount`];
+        }
 
-    let filteredStudents = data.completeentrydb;
-
-    if (studenttezkereNo) {
-        filteredStudents = filteredStudents.filter(student => student["Student Tezkere No"] === studenttezkereNo);
+        // Update student data with new installment data
+        data.students[studentIndex] = { ...data.students[studentIndex], ...req.body };
+        saveData();
+        res.json(data.students[studentIndex]);
+    } else {
+        res.status(404).json({ error: 'Student not found' });
     }
-
-    if (schoolName) {
-        filteredStudents = filteredStudents.filter(student => student.name === schoolName);
-    }
-
-    console.log('Filtered students:', filteredStudents); // Debugging log
-    res.json(filteredStudents);
-});
-
-app.get('/api/completeentrydb-ID', (req, res) => {
-    const studenttezkereNo = req.query.studenttezkereNo;
-    let filteredStudents = data.completeentrydb;
-
-    if (studenttezkereNo) {
-        filteredStudents = filteredStudents.filter(student => student["Student Tezkere No"] === studenttezkereNo);
-    }
-
-    console.log('Filtered students2:', filteredStudents); // Debugging log
-    res.json(filteredStudents);
 });
 
 app.get('/api/allDiscountOptions', (req, res) => {
@@ -188,10 +183,18 @@ app.post('/api/students', (req, res) => {
     res.status(201).json(student);
 });
 
+//fetch student and search student id
 app.get('/api/students', (req, res) => {
-    const username = req.query.username;
-    const selectedYear = req.query.year; // Ensure the parameter name matches the query parameter
-    const filteredStudents = data.students.filter(student => student.username === username && student.selectedYear === selectedYear);
+    const { studenttezkereNo, username, year } = req.query;
+
+    let filteredStudents = data.students;
+
+    if (studenttezkereNo) {
+        filteredStudents = filteredStudents.filter(student => student["Student Tezkere No"] === studenttezkereNo);
+    } else if (username && year) {
+        filteredStudents = filteredStudents.filter(student => student.username === username && student.selectedYear === year);
+    }
+
     res.json(filteredStudents);
 });
 
@@ -207,74 +210,19 @@ app.put('/api/students/:id', (req, res) => {
     }
 });
 
+// Endpoint to delete a student
 app.delete('/api/students/:id', (req, res) => {
     const studentId = parseInt(req.params.id, 10); // Convert studentId to a number
     const studentIndex = data.students.findIndex(student => student.id === studentId);
     if (studentIndex !== -1) {
-        const student = data.students.splice(studentIndex, 1)[0];
-        // Remove the corresponding entry from completeentrydb
-        data.completeentrydb = data.completeentrydb.filter(entry => entry.studentId !== studentId);
-        saveData();
-        res.json(student);
+        const deletedStudent = data.students.splice(studentIndex, 1)[0];
+        saveData(); // Save the updated data
+        res.json(deletedStudent);
     } else {
         res.status(404).json({ error: 'Student not found' });
     }
 });
 
-// New endpoint to save complete entry
-app.post('/api/completeentrydb', (req, res) => {
-    const completeEntry = req.body;
-    data.completeentrydb.push(completeEntry);
-    saveData();
-    res.status(201).json(completeEntry);
-});
-
-app.put('/api/completeentrydb/:id', (req, res) => {
-    const entryId = parseInt(req.params.id, 10); // Convert entryId to a number
-    const entryIndex = data.completeentrydb.findIndex(entry => entry.id === entryId);
-    if (entryIndex !== -1) {
-        data.completeentrydb[entryIndex] = { ...data.completeentrydb[entryIndex], ...req.body };
-        saveData();
-        res.json(data.completeentrydb[entryIndex]);
-    } else {
-        res.status(404).json({ error: 'Complete entry not found' });
-    }
-});
-
-app.put('/api/completeentrydb/:index', (req, res) => {
-    const index = parseInt(req.params.index, 10);
-    if (index >= 0 && index < data.completeentrydb.length) {
-        data.completeentrydb[index] = req.body;
-        saveData();
-        res.json(data.completeentrydb[index]);
-    } else {
-        res.status(404).json({ error: 'Complete entry not found' });
-    }
-});
-
-// New endpoint to delete complete entry
-app.delete('/api/completeentrydb/:id', (req, res) => {
-    const entryId = parseInt(req.params.id, 10); // Convert entryId to a number
-    const entryIndex = data.completeentrydb.findIndex(entry => entry.id === entryId);
-    if (entryIndex !== -1) {
-        const entry = data.completeentrydb.splice(entryIndex, 1)[0];
-        saveData();
-        res.json(entry);
-    } else {
-        res.status(404).json({ error: 'Complete entry not found' });
-    }
-});
-
-// Endpoint to get completeentrydb data
-app.get('/api/completeentrydb', (req, res) => {
-    if (data.completeentrydb) {
-        res.json(data.completeentrydb);
-    } else {
-        res.status(404).json({ error: 'Data not found' });
-    }
-});
-
-// Endpoint to get allDiscountOptions data
 // Endpoint to get allDiscountOptions data
 app.get('/api/allDiscountOptions', (req, res) => {
     if (data.allDiscountOptions) {
@@ -320,7 +268,6 @@ app.post('/save-tables', (req, res) => {
     });
 });
 
-
 // Endpoint to handle POST request for inputs
 app.post('/api/inputs', (req, res) => {
     const inputs = req.body.inputs;
@@ -350,7 +297,6 @@ app.get('/api/inputs', (req, res) => {
     res.json({ numbers: data.inputs });
 });
 
-
 // Serve the favicon.ico file
 app.get('/favicon.ico', (req, res) => {
     res.sendFile(dataFilePath);
@@ -358,6 +304,5 @@ app.get('/favicon.ico', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
 
 export default app;

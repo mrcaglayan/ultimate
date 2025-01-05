@@ -41,18 +41,20 @@ thead th {
   border-bottom: 2px solid #ddd;
   position: relative; /* Ensure relative positioning for search boxes */
   height: 80px; /* Increase header height */
-  background: linear-gradient(to bottom, #ffffff, #b2d60f); /* Gradient background */
+  background: linear-gradient(to bottom, #ffffff, #8a81df); /* Gradient background */
   max-width: 100px; /* Limit header column width */
   overflow: hidden; /* Prevent text overflow */
   text-overflow: ellipsis; /* Add ellipsis if content overflows */
-  white-space: nowrap; /* Prevent text wrapping in headers */
+  white-space: wrap; /* Prevent text wrapping in headers */
+  vertical-align:text-top; /* Align text to the top */
 }
 
 /* Make text in student list table cells bold and red */
 #student-list td, #student-list th {
   font-weight: bold;
-  color: red;
+  color: rgb(0, 0, 0);
 }
+
 
 /* Table body styling */
 tbody td {
@@ -192,3 +194,127 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Container for the summary table */
+#summary-table {
+  width: 100%;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+.summary-header {
+  display: flex;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+.summary-header span {
+  flex: 1; /* Distribute space equally */
+  padding: 10px;
+  text-align: center;
+  border-right: 1px solid #ddd; /* Add right border to each header cell */
+  font-weight: bold; /* Make the text inside the header bold */
+}
+
+.summary-header span:last-child {
+  border-right: none; /* Remove right border from the last header cell */
+}
+
+/* Body styling */
+.summary-body {
+  display: flex;
+  background-color: #fff;
+}
+
+.summary-body span {
+  flex: 1; /* Distribute space equally */
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd; /* Add right border to each body cell */
+  font-weight: bold; /* Make the text inside the body bold */
+}
+
+.summary-body span:last-child {
+  border-right: none; /* Remove right border from the last body cell */
+}
+
+.summary-body span input {
+  width: 100%; /* Ensure input takes full width of the span */
+  padding: 10px;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-weight: bold; /* Make the text inside the input bold */
+}
+
+/* Optional: Add hover effect for rows */
+.summary-body span:hover {
+  background-color: #f1f1f1;
+}
+
+/* Optional: Add alternating row colors */
+.summary-body span:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Installment forms styling */
+#installment-forms-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.installment-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.installment-form label {
+  flex: 1;
+  padding: 10px;
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.installment-form input {
+  flex: 2;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  background-color: #f9f9f9;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-weight: bold; /* Make the text inside the input bold */
+}
+
+/* Style for the select dropdown */
+#installmentCount {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  background-color: #f9f9f9;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+} 
+
+
