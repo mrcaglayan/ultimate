@@ -9,6 +9,21 @@
       "username": "ufuk",
       "password": "ufuk",
       "schoolName": "Ariyana High School"
+    },
+    {
+      "username": "sie",
+      "password": "sie",
+      "schoolName": "Kabil İlk Okulu"
+    },
+    {
+      "username": "cey",
+      "password": "cey",
+      "schoolName": "Ariyana High School"
+    },
+    {
+      "username": "ruh",
+      "password": "ruh",
+      "schoolName": "Kabil İlk Okulu"
     }
   ],
   "tables": {
